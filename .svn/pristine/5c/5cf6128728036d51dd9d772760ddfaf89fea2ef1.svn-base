@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="gb2312"?>
+<module name="arap_EJB">
+	<public>
+		<component priority="0" singleton="true" remote="true" tx="CMT" supportAlias="true">
+			<!--收款单管理短信功能服务接口 Add by WYR 2017-10-21-->
+			<interface>nc.itf.arap.gatheringbill.ext.msg.ISendMessageGatheringbillService</interface>
+			<implementation>nc.imp.arap.gatheringbill.ext.msg.SendMessageGatheringbillServiceImpl</implementation>
+		</component>
+	</public>
+</module>

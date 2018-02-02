@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+    <!--begin列表界面审批按钮拦截器配置	-->
+	<!-- 列表收款单管理审批按钮(单选按钮)拦截器配置  Add by WYR 2017-10-20 -->
+	<bean id="actionInterceptorInfo1" class="nc.ui.pubapp.plugin.action.ActionInterceptorInfo">
+		<property name="target" ref="ApproveListAction"/>
+		<property name="interceptor" ref="signListActionInteceptor"/>
+	</bean>
+	<!-- 列表收款单管理审批按钮(多选按钮)拦截器配置   Add by WYR 2017-10-20 -->
+	<bean  id="actionInterceptorInfo2" class="nc.ui.pubapp.plugin.action.ActionInterceptorInfo">
+		<property name="target" ref="ApproveListBatchAction"/>
+		<property name="interceptor" ref="signListBatchActionInteceptor"/>
+	</bean>	
+	<!--列表收款单管理审批按钮(单选按钮)拦截器  Add by WYR 2017-10-20 -->
+	<bean id="signListActionInteceptor" class="nc.ui.arap.gatheringbill.ext.actionInteceptors.ApproveListActionInteceptor">
+		<property name="model" ref="ManageAppModel" />
+		<property name="editor" ref="billFormEditor" />
+		<property name="dataManager" ref="modelDataManager" />
+	</bean>
+	<!--列表收款单管理审批按钮(单选按钮)拦截器  Add by WYR 2017-10-20 -->
+	<bean id="signListBatchActionInteceptor" class="nc.ui.arap.gatheringbill.ext.actionInteceptors.ApproveListBatchInteceptor">
+		<property name="model" ref="ManageAppModel" />
+		<property name="editor" ref="billFormEditor" />
+		<property name="dataManager" ref="modelDataManager" />
+	</bean>
+	<!--end列表界面审批按钮拦截器配置	-->
+	
+	
+	<!--begin卡片界面审批按钮拦截器配置	-->
+	<!-- 卡片收款单管理审批按钮(单选按钮)拦截器配置  Add by WYR 2017-10-20 -->
+	<bean id="actionInterceptorInfo3" class="nc.ui.pubapp.plugin.action.ActionInterceptorInfo">
+		<property name="target" ref="ApproveAction"/>
+		<property name="interceptor" ref="approveActionInteceptor"/>
+	</bean>
+	<!--卡片收款单管理审批按钮(单选按钮)拦截器  Add by WYR 2017-10-20 -->
+	<bean id="approveActionInteceptor" class="nc.ui.arap.gatheringbill.ext.actionInteceptors.ApproveActionInteceptorr">
+		<property name="model" ref="ManageAppModel" />
+		<property name="editor" ref="billFormEditor" />
+		<property name="dataManager" ref="modelDataManager" />
+	</bean>
+	<!--end卡片界面审批按钮拦截器配置	-->
+	
+	
+	
+	
+</beans> 
