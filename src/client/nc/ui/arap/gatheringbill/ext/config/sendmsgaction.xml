@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 插入间隔按钮到交易类型按钮之前(卡片)Add by WYR 2017-10-20 -->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="currNullAction" />
+		<property name="target" ref="transtype" />
+		<property name="pos" value="before" />
+		<property name="actionContainer" ref="cardActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 插入发送短信按钮到交易类型按钮之前(卡片)Add by WYR 2017-10-20 -->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="sendMsgAction" />
+		<property name="target" ref="transtype" />
+		<property name="pos" value="before" />
+		<property name="actionContainer" ref="cardActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 插入间隔按钮到发送短信按钮之后(卡片)Add by WYR 2017-10-20 -->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="currNullAction" />
+		<property name="target" ref="sendMsgAction" />
+		<property name="pos" value="after" />
+		<property name="actionContainer" ref="cardActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 插入间隔按钮到交易类型按钮之前(列表)Add by WYR 2017-10-20 -->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="currNullAction" />
+		<property name="target" ref="transtype" />
+		<property name="pos" value="before" />
+		<property name="actionContainer" ref="listActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 插入间发送短信钮按到交易类型按钮之前(列表)Add by WYR 2017-10-20-->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="sendMsgAction" />
+		<property name="target" ref="transtype" />
+		<property name="pos" value="before" />
+		<property name="actionContainer" ref="listActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 插入间间隔按钮到发送短信按钮之后(列表)-Add by WYR 2017-10-20 -->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="currNullAction" />
+		<property name="target" ref="sendMsgAction" />
+		<property name="pos" value="after" />
+		<property name="actionContainer" ref="listActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 发送短信按钮XML配置Add by WYR 2017-10-20 -->
+	<bean id="sendMsgAction" class="nc.ui.arap.gatheringbill.ext.actions.SendMsgAction">
+		<property name="model" ref="ManageAppModel" />
+		<property name="editor" ref="billFormEditor" />
+		<property name="dataManager" ref="modelDataManager" />
+	</bean>
+</beans> 

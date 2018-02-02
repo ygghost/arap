@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN//EN" "http://www.springframework.org/dtd/spring-beans.dtd">
+<beans>
+	<!-- 间隔按钮 -->
+	<bean id="separatorAction2" class="nc.funcnode.ui.action.SeparatorAction" />
+	<!-- 插入间隔按钮到复制按钮之后(卡片)Add by WYR 2017-10-20 -->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="separatorAction2" />
+		<property name="target" ref="copyAction" />
+		<property name="pos" value="after" />
+		<property name="actionContainer" ref="cardActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 插入查看短信记录按钮到间隔按钮之后(卡片)Add by WYR 2017-10-20 -->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="smsRecordAction" />
+		<property name="target" ref="separatorAction2" />
+		<property name="pos" value="after" />
+		<property name="actionContainer" ref="cardActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 插入间隔按钮到复制按钮之后(列表)Add by WYR 2017-10-20 -->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="separatorAction2" />
+		<property name="target" ref="copyAction" />
+		<property name="pos" value="after" />
+		<property name="actionContainer" ref="listActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 插入查看短信记录按钮到间隔按钮之后(列表)Add by WYR 2017-10-20 -->
+	<bean class="nc.ui.pubapp.plugin.action.InsertActionInfo">
+		<property name="action" ref="smsRecordAction" />
+		<property name="target" ref="separatorAction2" />
+		<property name="pos" value="after" />
+		<property name="actionContainer" ref="listActions" />
+		<!-- notedit 非编辑时可见；edit 编辑时可见 -->
+		<property name="actionType" value="notedit" />
+	</bean>
+	<!-- 查看短信记录按钮XML配置Add by WYR 2017-10-20 -->
+	<bean id="smsRecordAction" class="nc.ui.arap.gatheringbill.ext.actions.SmsRecordAction">
+		<property name="model" ref="ManageAppModel" />
+		<property name="editor" ref="billFormEditor" />
+		<property name="dataManager" ref="modelDataManager" />
+	</bean>
+
+</beans> 
